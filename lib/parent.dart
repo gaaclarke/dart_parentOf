@@ -31,14 +31,14 @@ class FileSystemEntity {
         if (ch == _dot) {
           state = 3;
         } else if (ch == _pathSeparator) {
-          return '${path.substring(0, path.length - chop)}$_pathSeparatorString..';
+          return path.substring(0, path.length - chop);
         } else {
           state = 1;
         }
       } else if (state == 3) {
         // Saw two dots state.
         if (ch == _pathSeparator) {
-          return '$path$_pathSeparatorString..';
+          return path.substring(0, path.length - chop);
         } else {
           state = 1;
         }

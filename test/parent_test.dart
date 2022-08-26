@@ -35,9 +35,9 @@ void main() {
     Expect.equals(
         'dir/sub.dir', FileSystemEntity.parentOf('dir/sub.dir/fi le///'));
     Expect.equals('dir/..', FileSystemEntity.parentOf('dir/../file/'));
-    // Expect.equals('dir/..', FileSystemEntity.parentOf('dir/../..'));
-    // Expect.equals('.', FileSystemEntity.parentOf('./..'));
-    // Expect.equals('..', FileSystemEntity.parentOf('../.'));
+    Expect.equals('dir/..', FileSystemEntity.parentOf('dir/../..'));
+    Expect.equals('.', FileSystemEntity.parentOf('./..'));
+    Expect.equals('..', FileSystemEntity.parentOf('../.'));
   });
 
   test('windows', () {
