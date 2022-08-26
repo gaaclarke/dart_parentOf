@@ -1,6 +1,13 @@
-const int _pathSeparator = 47;
+const int _posixPathSeparator = 47;
+const int _windowsPathSeparator = 92;
 const int _dot = 46;
-const String _pathSeparatorString = '/';
+
+bool isWindows = false;
+
+bool _isPathSeparator(int ch) => isWindows
+    ? ch == _posixPathSeparator || ch == _windowsPathSeparator
+    : ch == _posixPathSeparator;
+String get _pathSeparatorString => isWindows ? r'\' : '/';
 
 class FileSystemEntity {
   static String parentOf(String path) {
@@ -16,35 +23,35 @@ class FileSystemEntity {
         // Initial state.
         if (ch == _dot) {
           state = 2;
-        } else if (ch == _pathSeparator) {
+        } else if (_isPathSeparator(ch)) {
           // pass
         } else {
           state = 1;
         }
       } else if (state == 1) {
         // Past trailing special characters state.
-        if (ch == _pathSeparator) {
+        if (_isPathSeparator(ch)) {
           state = 4;
         }
       } else if (state == 2) {
         // Saw a dot state.
         if (ch == _dot) {
           state = 3;
-        } else if (ch == _pathSeparator) {
+        } else if (_isPathSeparator(ch)) {
           return path.substring(0, path.length - chop);
         } else {
           state = 1;
         }
       } else if (state == 3) {
         // Saw two dots state.
-        if (ch == _pathSeparator) {
+        if (_isPathSeparator(ch)) {
           return path.substring(0, path.length - chop);
         } else {
           state = 1;
         }
       } else if (state == 4) {
         // Chopping separators state.
-        if (ch != _pathSeparator) {
+        if (!_isPathSeparator(ch)) {
           return path.substring(0, path.length - chop + 1);
         }
       }
