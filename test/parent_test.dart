@@ -20,8 +20,8 @@ void main() {
     Expect.equals('.', FileSystemEntity.parentOf('file'));
     Expect.equals('.', FileSystemEntity.parentOf('file//'));
     Expect.equals('.', FileSystemEntity.parentOf(''));
-    Expect.equals('.', FileSystemEntity.parentOf('..'));
-    Expect.equals('.', FileSystemEntity.parentOf('.'));
+    Expect.equals('../..', FileSystemEntity.parentOf('..'));  // changed
+    Expect.equals('..', FileSystemEntity.parentOf('.'));  // change
     // Expect.equals('.', FileSystemEntity.parentOf('')); delete duplicate of above
     Expect.equals('/', FileSystemEntity.parentOf('/'));
     Expect.equals('/', FileSystemEntity.parentOf('//'));

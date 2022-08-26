@@ -52,9 +52,9 @@ class FileSystemEntity {
     if (state == 0 || state == 4) {
       return _pathSeparatorString;
     } else if (state == 2) {
-      return '.';
+      return '..';
     } else if (state == 3) {
-      return '.';
+      return '..$_pathSeparatorString..';
     } else {
       return '.';
     }
