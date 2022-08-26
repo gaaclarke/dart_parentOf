@@ -10,31 +10,31 @@ class Expect {
 
 void main() {
   test('posix', () {
-    // Expect.equals('/dir', FileSystemEntity.parentOf('/dir/file'));
-    // Expect.equals('/dir', FileSystemEntity.parentOf('/dir/file/'));
-    // Expect.equals('/dir', FileSystemEntity.parentOf('/dir//file//'));
-    // Expect.equals('/', FileSystemEntity.parentOf('/dir'));
-    // Expect.equals('/', FileSystemEntity.parentOf('/dir///'));
-    // Expect.equals('/', FileSystemEntity.parentOf('/'));
+    Expect.equals('/dir', FileSystemEntity.parentOf('/dir/file'));
+    Expect.equals('/dir', FileSystemEntity.parentOf('/dir/file/'));
+    Expect.equals('/dir', FileSystemEntity.parentOf('/dir//file//'));
+    Expect.equals('/', FileSystemEntity.parentOf('/dir'));
+    Expect.equals('/', FileSystemEntity.parentOf('/dir///'));
+    Expect.equals('/', FileSystemEntity.parentOf('/'));
 
-    // Expect.equals('.', FileSystemEntity.parentOf('file'));
-    // Expect.equals('.', FileSystemEntity.parentOf('file//'));
+    Expect.equals('.', FileSystemEntity.parentOf('file'));
+    Expect.equals('.', FileSystemEntity.parentOf('file//'));
     // Expect.equals('.', FileSystemEntity.parentOf(''));
     // Expect.equals('.', FileSystemEntity.parentOf('..'));
     // Expect.equals('.', FileSystemEntity.parentOf('.'));
     // Expect.equals('.', FileSystemEntity.parentOf(''));
-    // Expect.equals('/', FileSystemEntity.parentOf('/'));
-    // Expect.equals('/', FileSystemEntity.parentOf('//'));
-    // Expect.equals('/', FileSystemEntity.parentOf('//file///'));
-    // Expect.equals('dir', FileSystemEntity.parentOf('dir/file'));
-    // Expect.equals('dir', FileSystemEntity.parentOf('dir/file/'));
-    // Expect.equals('dir', FileSystemEntity.parentOf('dir/file//'));
-    // Expect.equals('dir/subdir', FileSystemEntity.parentOf('dir/subdir/file'));
-    // Expect.equals(
-    //     'dir//subdir', FileSystemEntity.parentOf('dir//subdir//file/'));
-    // Expect.equals(
-    //     'dir/sub.dir', FileSystemEntity.parentOf('dir/sub.dir/fi le///'));
-    // Expect.equals('dir/..', FileSystemEntity.parentOf('dir/../file/'));
+    Expect.equals('/', FileSystemEntity.parentOf('/'));
+    Expect.equals('/', FileSystemEntity.parentOf('//'));
+    Expect.equals('/', FileSystemEntity.parentOf('//file///'));
+    Expect.equals('dir', FileSystemEntity.parentOf('dir/file'));
+    Expect.equals('dir', FileSystemEntity.parentOf('dir/file/'));
+    Expect.equals('dir', FileSystemEntity.parentOf('dir/file//'));
+    Expect.equals('dir/subdir', FileSystemEntity.parentOf('dir/subdir/file'));
+    Expect.equals(
+        'dir//subdir', FileSystemEntity.parentOf('dir//subdir//file/'));
+    Expect.equals(
+        'dir/sub.dir', FileSystemEntity.parentOf('dir/sub.dir/fi le///'));
+    Expect.equals('dir/..', FileSystemEntity.parentOf('dir/../file/'));
     // Expect.equals('dir/..', FileSystemEntity.parentOf('dir/../..'));
     // Expect.equals('.', FileSystemEntity.parentOf('./..'));
     // Expect.equals('..', FileSystemEntity.parentOf('../.'));
