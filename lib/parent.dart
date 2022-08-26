@@ -45,7 +45,7 @@ class FileSystemEntity {
     } else if (state == 2) {
       return '.';
     } else if (state == 3) {
-      return '$path$_pathSeparatorString..';
+      return '.';
     } else {
       return '.';
     }

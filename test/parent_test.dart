@@ -4,7 +4,7 @@ import 'package:test/test.dart' as testLib;
 
 class Expect {
   static void equals(String x, String y) {
-    expect(x, testLib.equals(y));
+    expect(y, testLib.equals(x));
   }
 }
 
@@ -20,8 +20,8 @@ void main() {
     Expect.equals('.', FileSystemEntity.parentOf('file'));
     Expect.equals('.', FileSystemEntity.parentOf('file//'));
     // Expect.equals('.', FileSystemEntity.parentOf(''));
-    // Expect.equals('.', FileSystemEntity.parentOf('..'));
-    // Expect.equals('.', FileSystemEntity.parentOf('.'));
+    Expect.equals('.', FileSystemEntity.parentOf('..'));
+    Expect.equals('.', FileSystemEntity.parentOf('.'));
     // Expect.equals('.', FileSystemEntity.parentOf(''));
     Expect.equals('/', FileSystemEntity.parentOf('/'));
     Expect.equals('/', FileSystemEntity.parentOf('//'));
